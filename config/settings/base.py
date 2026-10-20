@@ -26,7 +26,7 @@ load_dotenv(BASE_DIR / ".env")
 
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
