@@ -6,6 +6,7 @@ import os
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 
+ALLOWED_HOSTS = ["*"]
 
 DATABASES = {
     "default": {
