@@ -7,6 +7,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 ALLOWED_HOSTS = [
     "168.110.20.125",
+    "10.0.0.202",
+    "localhost",
+    "127.0.0.1",
 ]
 
 DATABASES = {
