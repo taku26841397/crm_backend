@@ -10,6 +10,7 @@ ALLOWED_HOSTS = [
     "10.0.0.202",
     "localhost",
     "127.0.0.1",
+    "api.taku-archive.dev",
 ]
 
 DATABASES = {
