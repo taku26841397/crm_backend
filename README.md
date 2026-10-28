@@ -28,11 +28,11 @@ Django REST Framework を使用して開発し、顧客情報・対応履歴の�
 ## Database
 
 - SQLite（開発環境）
-- PostgreSQL（本番環境予定）
+- PostgreSQL（本番環境）
 
 ## Infrastructure
 
-- Oracle Cloud Free Tier（導入予定）
+- Oracle Cloud Free Tier
 
 ---
 
@@ -132,9 +132,6 @@ config/
 
 # 今後の改善予定
 
-- Oracle Cloudへのデプロイ
-- PostgreSQL運用
-- HTTPS対応
 - Docker対応
 - 自動テスト導入
 - CI/CD構築
