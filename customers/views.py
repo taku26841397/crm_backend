@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from rest_framework.generics import ListAPIView,RetrieveAPIView,ListCreateAPIView,UpdateAPIView,DestroyAPIView
+from rest_framework.generics import ListAPIView,RetrieveAPIView,RetrieveUpdateAPIView,ListCreateAPIView,UpdateAPIView,DestroyAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
 from django.db.models import Q
-from .models import Customer,Activity
-from .serializers import CustomerSerializer,ActivitySerializer
+from .models import Customer,Activity,User
+from .serializers import CustomerSerializer,ActivitySerializer,UserSerializer,ProfileSerializer
 
 from django.db.models import Case,When,Value,IntegerField
 from django.utils import timezone
@@ -163,4 +163,23 @@ class ActivityDeleteAPI(DestroyAPIView):
     queryset = Activity.objects.all()
     serializer_class = ActivitySerializer
     lookup_url_kwarg = "activity_id"
+    
+
+class UserAPI(RetrieveAPIView):
+    serializer_class = UserSerializer
+    # permission_classes = [IsAuthenticated]
+    
+    def get_object(self):
+        return self.request.user
+    
+
+class ProfileAPI(RetrieveUpdateAPIView):
+
+    serializer_class=ProfileSerializer
+    permission_classes = [IsAuthenticated]
+    
+    def get_object(self):
+        return self.request.user.profile
+    
+
 # Create your views here.
